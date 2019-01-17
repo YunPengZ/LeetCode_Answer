@@ -36,38 +36,14 @@ public class LeetCode_051 {
 		// TODO Auto-generated method stub
 		
 	}
-	private boolean isValid(boolean[][] visited,int layer,int i) {
-		for(int j = 0;j<layer;j++) {
-			if(visited[j][i]) {
-				return false;
-			}
-		}
-		int tempRow = layer;
-		int tempColumn = i;
-		int length = visited.length;
-		while(tempRow++<length-1&&tempColumn++<length-1) {
-			if(visited[tempRow][tempColumn]) {
-				return false;
-			}
-		}
-		tempRow = layer;tempColumn =i;
-		while(tempRow-->0&&tempColumn++<length-1) {
-			if(visited[tempRow][tempColumn]) {
-				return false;
-			}
-		}
-		tempRow = layer;tempColumn =i;
-		while(tempRow++<length-1&&tempColumn-->0) {
-			if(visited[tempRow][tempColumn]) {
-				return false;
-			}
-		}
-		tempRow = layer;tempColumn =i;
-		while(tempRow-->0&&tempColumn-->0) {
-			if(visited[tempRow][tempColumn]) {
-				return false;
+	private boolean isValid(boolean[][] visited,int layer,int column) {
+		for(int i = 0;i<layer;i++) {
+			for(int j = 0;j<visited.length;j++) {
+				if(visited[i][j]&&(layer+j==column+i
+						||layer+column==i+j||column==j))return false;
 			}
 		}
 		return true;
 	}
+	
 }
