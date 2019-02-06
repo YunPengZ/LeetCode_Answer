@@ -18,7 +18,7 @@ public class subsetsWithDup {
 		for(int i = start;i<nums.length;i++) {
 			if(i>start&&nums[i]==nums[i-1])continue;
 			arrayList.add(nums[i]);
-			backtrack(list, arrayList, nums, start+1);
+			backtrack(list, arrayList, nums, i+1);
 			arrayList.remove(arrayList.size()-1);//删除已添加的元素 遍历更多可能
 		}
 	}
