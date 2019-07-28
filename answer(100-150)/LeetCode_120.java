@@ -3,7 +3,7 @@ package leetcode.from103;
 import java.util.Arrays;
 import java.util.List;
 
-public class LeeyCode_120 {
+public class LeetCode_120 {
     public int minimumTotal(List<List<Integer>> triangle) {
         int len = triangle.size();
        int mem[][] = new int[len][len];
